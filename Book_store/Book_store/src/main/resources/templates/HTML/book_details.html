@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book Details</title>
+<link rel="Stylesheet" href="static/CSS/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book Details</h1>
+        <nav>
+            <a href="/books">Back to Books</a>
+        </nav>
+    </header>
+    <main>
+        <h2 th:text="${book.title}"></h2>
+        <p>Author: <span th:text="${book.author}"></span></p>
+        <p>Price: <span th:text="${book.price}"></span></p>
+        <p>Description: <span th:text="${book.description}"></span></p>
+        <a href="/order">Order this Book</a>
+    </main>
+    <script src="static/JS/script.js" defer></script>
+</body>
+</html>

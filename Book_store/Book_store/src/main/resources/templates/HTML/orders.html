@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orders</title>
+<link rel="stylesheet" href="static/CSS/styles.css">
+</head>
+<body>
+   <header>
+        <h1>Orders</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/books">Books</a>
+        </nav>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Book</th>
+                    <th>Quantity</th>
+                    <th>User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="order : ${orders}">
+                    <tr>
+                        <td th:text="${order.id}"></td>
+                        <td th:text="${order.book.title}"></td>
+                        <td th:text="${order.quantity}"></td>
+                        <td th:text="${order.user.username}"></td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </main>
+    <script src="static/JS/script.js" defer></script>
+</body>
+</html>

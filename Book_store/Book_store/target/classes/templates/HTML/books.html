@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Books</title>
+<link rel="stylesheet" href="static/CSS/Styles.css">
+</head>
+<body>
+    <header>
+        <h1>Books</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/books/add">Add Book</a>
+        </nav>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="book : ${books}">
+                    <tr>
+                        <td th:text="${book.title}"></td>
+                        <td th:text="${book.author}"></td>
+                        <td th:text="${book.price}"></td>
+                        <td>
+                            <a th:href="@{/books/edit/{id}(id=${book.id})}">Edit</a>
+                            <a th:href="@{/books/delete/{id}(id=${book.id})}">Delete</a>
+                            <a th:href="@{/book/details/{id}(id=${book.id})}">Details</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </main>
+    <script src="static/JS/script.js" defer></script>
+</body>
+</html>
